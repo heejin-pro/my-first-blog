@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Post
+from .models import Post, Comment
 
 class PostForm(forms.ModelForm):
 
@@ -12,3 +12,10 @@ class PostForm(forms.ModelForm):
 class SampleForm(forms.Form):
 
     sample_text = forms.CharField(initial="Sample Text Field~")
+
+
+class CommentForm(forms.ModelForm):
+
+    class Meta:
+        model = Comment
+        fields = ('author', 'text',)
